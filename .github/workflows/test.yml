@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Prettier check
-        run: npm run prettier:check
+        run: npm run prettier
 
       - name: Start MongoDB
         uses: isbang/compose-action@v1.4.1
