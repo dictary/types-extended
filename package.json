@@ -2,7 +2,7 @@
   "name": "object-extended",
   "version": "1.0.0",
   "description": "Additional object methods",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc --build",
     "prettier": "prettier --write src test",
