@@ -3,6 +3,7 @@ export declare class ObjectExtended {
     constructor(object: object);
     isNotBuiltInObject(value: any): boolean;
     getResult(): object;
+    getResultAsString(): string;
     sort(): this;
     deepSort(): this;
     private recursiveSort;

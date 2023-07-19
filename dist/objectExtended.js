@@ -26,6 +26,9 @@ class ObjectExtended {
     getResult() {
         return this.object;
     }
+    getResultAsString() {
+        return this.object.toString();
+    }
     sort() {
         const keys = Object.keys(this.object).sort();
         const sortedObject = {};
