@@ -5,7 +5,7 @@ export class ObjectExtended {
 		if (isObject(object) && this.isNotBuiltInObject(object)) {
 			this.object = structuredClone(object);
 		} else {
-			throw new Error("Object-extended: type should be object");
+			throw new Error("Types-Extended: type should be object");
 		}
 	}
 

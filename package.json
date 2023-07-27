@@ -1,5 +1,5 @@
 {
-  "name": "object-extended",
+  "name": "types-extended",
   "version": "1.0.0",
   "description": "Additional object methods",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "start": "npx ts-node src/index.ts",
     "test": "jest --config jest.config.json"
   },
-  "keywords": ["Node.js", "TypeScript", "Object", "Object-Extended"],
+  "keywords": ["Node.js", "TypeScript", "Object", "Types-Extended"],
   "author": "EvilMangos",
   "license": "ISC",
   "devDependencies": {
