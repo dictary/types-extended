@@ -4,7 +4,7 @@ exports.ArrayExtended = void 0;
 class ArrayExtended {
     constructor(array) {
         if (Array.isArray(array)) {
-            this.array = structuredClone(array);
+            this.array = JSON.parse(JSON.stringify(array));
         }
         else {
             throw new Error("Types-Extended: type should be array");
@@ -37,7 +37,7 @@ class ArrayExtended {
     }
     exclude(properties) {
         this.array = this.array.map((elem) => {
-            const newObject = structuredClone(elem);
+            const newObject = elem;
             properties.forEach((property) => {
                 delete newObject[property];
             });

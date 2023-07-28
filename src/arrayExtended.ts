@@ -2,7 +2,7 @@ export class ArrayExtended {
 	private array: object[];
 	constructor(array: object[]) {
 		if (Array.isArray(array)) {
-			this.array = structuredClone(array);
+			this.array = JSON.parse(JSON.stringify(array));
 		} else {
 			throw new Error("Types-Extended: type should be array");
 		}
@@ -39,7 +39,7 @@ export class ArrayExtended {
 
 	exclude(properties: string[]) {
 		this.array = this.array.map((elem) => {
-			const newObject = structuredClone(elem);
+			const newObject = elem;
 			properties.forEach((property) => {
 				delete newObject[property];
 			});
