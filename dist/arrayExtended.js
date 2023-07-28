@@ -1,0 +1,60 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ArrayExtended = void 0;
+class ArrayExtended {
+    constructor(array) {
+        if (Array.isArray(array)) {
+            this.array = structuredClone(array);
+        }
+        else {
+            throw new Error("Types-Extended: type should be array");
+        }
+    }
+    isNotBuiltInObject(value) {
+        const builtInTypes = [
+            "[object Date]",
+            "[object Number]",
+            "[object String]",
+            "[object Number]",
+        ];
+        return !builtInTypes.includes(Object.prototype.toString.call(value));
+    }
+    getResult() {
+        return this.array;
+    }
+    getResultAsString() {
+        return JSON.stringify(this.array);
+    }
+    include(properties) {
+        this.array = this.array.map((elem) => {
+            const newObject = {};
+            properties.forEach((property) => {
+                newObject[property] = elem[property];
+            });
+            return newObject;
+        });
+        return this;
+    }
+    exclude(properties) {
+        this.array = this.array.map((elem) => {
+            const newObject = structuredClone(elem);
+            properties.forEach((property) => {
+                delete newObject[property];
+            });
+            return newObject;
+        });
+        return this;
+    }
+    withoutTimestamps() {
+        this.exclude([
+            "createdAt",
+            "created_at",
+            "updatedAt",
+            "updated_at",
+            "deletedAt",
+            "deleted_at",
+        ]);
+        return this;
+    }
+}
+exports.ArrayExtended = ArrayExtended;

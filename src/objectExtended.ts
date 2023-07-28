@@ -24,7 +24,7 @@ export class ObjectExtended {
 	}
 
 	getResultAsString() {
-		return this.object.toString();
+		return JSON.stringify(this.object);
 	}
 
 	sort() {
