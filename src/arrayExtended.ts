@@ -1,5 +1,6 @@
 export class ArrayExtended {
 	private array: object[];
+
 	constructor(array: object[]) {
 		if (Array.isArray(array)) {
 			this.array = JSON.parse(JSON.stringify(array));
@@ -58,6 +59,20 @@ export class ArrayExtended {
 			"deleted_at",
 		]);
 
+		return this;
+	}
+
+	sortByProperty(property: string, direction: "asc" | "desc" = "asc") {
+		const isAsc = direction === "asc";
+		this.array = this.array.sort((a, b) => {
+			if (a[property] > b[property]) {
+				return isAsc ? 1 : -1;
+			}
+			if (a[property] < b[property]) {
+				return isAsc ? -1 : 1;
+			}
+			return 0;
+		});
 		return this;
 	}
 }

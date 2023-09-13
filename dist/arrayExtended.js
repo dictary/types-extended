@@ -56,5 +56,18 @@ class ArrayExtended {
         ]);
         return this;
     }
+    sortByProperty(property, direction = "asc") {
+        const isAsc = direction === "asc";
+        this.array = this.array.sort((a, b) => {
+            if (a[property] > b[property]) {
+                return isAsc ? 1 : -1;
+            }
+            if (a[property] < b[property]) {
+                return isAsc ? -1 : 1;
+            }
+            return 0;
+        });
+        return this;
+    }
 }
 exports.ArrayExtended = ArrayExtended;
